@@ -48,7 +48,7 @@ Make sure you have the following software installed on your machine:
 
 1.  **Clone the repository:**
     ```sh
-    git clone [https://github.com/EduardoR002/ecominho-website.git](https://github.com/EduardoR002/ecominho-website.git)
+    git clone [https://github.com/EduardoR002/EcoMinho.git](https://github.com/EduardoR002/EcoMinho.git)
     ```
 2.  **Navigate to the project directory:**
     ```sh
