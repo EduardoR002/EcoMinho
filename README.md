@@ -75,25 +75,27 @@ Make sure you have the following software installed on your machine:
 The project follows the standard Angular project structure:
 
 
+```plaintext
 ecominho-website/
 └── src/
 ├── app/
-│   ├── components/       # Reusable components
-│   │   ├── header/
-│   │   └── footer/
-│   ├── pages/            # Main pages of the website
-│   │   ├── home/
-│   │   ├── solutions/
-│   │   ├── projects/
-│   │   ├── about/
-│   │   └── contact/
-│   ├── app.component.ts    # Main application component
-│   ├── app.config.ts       # Application configuration
-│   └── app.routes.ts       # Application routes
-├── assets/               # Static assets like images, icons
-├── index.html            # Main HTML file
-├── main.ts               # Main entry point of the application
-└── styles.css            # Global application styles
+│ ├── components/ # Reusable components
+│ │ ├── header/
+│ │ └── footer/
+│ ├── pages/ # Main pages of the website
+│ │ ├── home/
+│ │ ├── solutions/
+│ │ ├── projects/
+│ │ ├── about/
+│ │ └── contact/
+│ ├── app.component.ts # Main application component
+│ ├── app.config.ts # Application configuration
+│ └── app.routes.ts # Application routes
+├── assets/ # Static assets like images, icons
+├── index.html # Main HTML file
+├── main.ts # Main entry point of the application
+└── styles.css # Global application styles
+```
 
 
 ---
