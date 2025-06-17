@@ -1,4 +1,4 @@
-# EcoMinho
+# Ecominho
 Website for an Air Conditioning Company
 
 ![Ecominho Website Hero](https://lirp.cdn-website.com/013819ed/dms3rep/multi/opt/1.1-e14394f8-607w.png)
