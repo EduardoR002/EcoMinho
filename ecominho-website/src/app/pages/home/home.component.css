@@ -44,7 +44,7 @@
   font-size: 3.2rem;
   font-weight: 700;
   margin-bottom: 0.7rem;
-  letter-spacing: 2.5px;
+  letter-spacing: 2px;
   text-shadow: 0 6px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10);
   font-variant-ligatures: none;
   font-feature-settings: "liga" 0;
@@ -246,19 +246,7 @@
 /* Featured Projects Section */
 .featured-projects {
   padding: 6rem 0;
-  background: url('https://lirp.cdn-website.com/013819ed/dms3rep/multi/opt/areiapreta-1920w.jpg') center center/cover no-repeat;
-  position: relative;
-}
-.featured-projects::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.40);
-  z-index: 0;
-}
-.featured-projects > .container {
-  position: relative;
-  z-index: 1;
+  background-color: var(--brand-light-bg);
 }
 
 .projects-grid {
@@ -321,19 +309,7 @@
 
 .areas-trabalho {
   padding: 6rem 0;
-  background: url('https://lirp.cdn-website.com/013819ed/dms3rep/multi/opt/areia-1920w.jpg') center center/cover no-repeat;
-  position: relative;
-}
-.areas-trabalho::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.65);
-  z-index: 0;
-}
-.areas-trabalho > .container {
-  position: relative;
-  z-index: 1;
+  background: var(--brand-white);
 }
 
 .areas-trabalho .services-grid {
