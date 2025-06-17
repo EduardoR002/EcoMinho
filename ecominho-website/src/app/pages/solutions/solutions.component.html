@@ -1,12 +1,25 @@
 <div class="animated-component">
-  <section class="page-header">
+  <section class="areas-trabalho" *ngIf="equipments.length">
+    <div class="container text-center">
+      <h2 class="section-title">As Nossas Soluções de {{ title }}</h2>
+      <span class="lux-divider"></span>
+      <div class="services-grid">
+        <div class="service-card" *ngFor="let eq of equipments">
+          <div class="service-badge">{{ eq.badge || '🔧' }}</div>
+          <img [src]="eq.image" [alt]="eq.name">
+          <h3>{{ eq.name }}</h3>
+          <p><em>{{ eq.subtitle }}</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="page-header" *ngIf="!equipments.length">
     <div class="container">
       <h1>As Nossas Soluções</h1>
       <p>Soluções integradas e personalizadas para o máximo conforto e eficiência.</p>
     </div>
   </section>
-
-  <section class="solutions-content">
+  <section class="solutions-content" *ngIf="!equipments.length">
     <div class="container">
       <div class="solution-item">
         <div class="solution-image">

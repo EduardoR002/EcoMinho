@@ -382,3 +382,247 @@
   box-shadow: none;
   border: none;
 }
+
+.service-card .installations-list {
+  margin: 1.2rem 1.5rem 1.5rem 1.5rem;
+  padding: 1.2rem 1.5rem 1.2rem 1.5rem;
+  background: rgba(245, 245, 245, 0.95);
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0,92,178,0.06);
+  border: 1.5px solid #f3e7c3;
+  font-size: 1.08rem;
+  color: var(--text-dark);
+  animation: fadeInAccordion 0.4s cubic-bezier(.4,2,.3,1);
+}
+.service-card .installations-list h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--brand-blue);
+  margin-bottom: 0.7rem;
+}
+.service-card .installations-list ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  list-style: disc inside;
+  color: var(--brand-green-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+@keyframes fadeInAccordion {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.saber-mais-btn {
+  margin-bottom: 0.5rem;
+}
+
+.service-card.expanded {
+  box-shadow: 0 20px 48px 0 rgba(0, 92, 178, 0.16), 0 4px 16px rgba(0,0,0,0.13);
+  border-color: #d4af37;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+/* Modal Overlay Animation */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(24, 24, 24, 0.45);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInOverlay 0.5s cubic-bezier(.4,2,.3,1);
+}
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modal Content: Enhanced Glassmorphism, Gold Border, Gradient, Shadow, Animation */
+.modal-content {
+  background: linear-gradient(135deg, rgba(248,249,250,0.92) 60%, rgba(255,255,255,0.82) 100%);
+  backdrop-filter: blur(22px) saturate(1.3);
+  border-radius: 2.2rem;
+  box-shadow: 0 24px 64px 0 rgba(0, 92, 178, 0.18), 0 6px 24px rgba(0,0,0,0.13), 0 0 0 4px rgba(212,175,55,0.10);
+  border: 2.5px solid var(--brand-gold);
+  padding: 3.2rem 3.2rem 2.7rem 3.2rem;
+  max-width: 670px;
+  width: 98vw;
+  position: relative;
+  text-align: center;
+  animation: modalPopIn 0.55s cubic-bezier(.4,2,.3,1);
+  overflow: visible;
+}
+@keyframes modalPopIn {
+  0% { opacity: 0; transform: scale(0.92) translateY(40px); }
+  60% { opacity: 1; transform: scale(1.04) translateY(-8px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Subtle pattern/gradient behind carousel image */
+.carousel-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto 1.7rem auto;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.7rem;
+  overflow: hidden;
+  box-shadow: 0 8px 32px 0 rgba(0, 92, 178, 0.13), 0 2px 8px rgba(212,175,55,0.10);
+  background: repeating-linear-gradient(135deg, #f6f7fa 0 12px, #f8f9fa 12px 24px);
+  border: 1.5px solid var(--brand-gold);
+}
+.carousel-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(0,92,178,0.10) 0%, rgba(0,201,67,0.10) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.3rem;
+  background: #f6f7fa;
+  display: block;
+  z-index: 1;
+  transition: opacity 0.5s cubic-bezier(.4,2,.3,1);
+}
+
+/* Carousel Arrow: Gold Accent, Glow, Animation */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  background: rgba(255,255,255,0.96);
+  border: 2px solid var(--brand-gold);
+  font-size: 2.6rem;
+  color: var(--brand-gold);
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s, background 0.2s, box-shadow 0.2s;
+  padding: 0.2rem 0.7rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(212,175,55,0.18), 0 0 8px 2px rgba(212,175,55,0.10);
+  outline: none;
+  filter: drop-shadow(0 0 6px #d4af37aa);
+}
+.carousel-arrow.left { left: 1.1rem; }
+.carousel-arrow.right { right: 1.1rem; }
+.carousel-arrow:hover {
+  color: var(--brand-blue);
+  background: rgba(0,92,178,0.10);
+  transform: scale(1.13);
+  box-shadow: 0 4px 18px rgba(0,92,178,0.10), 0 2px 8px rgba(212,175,55,0.18);
+}
+
+/* Modal Close Button: Gold Accent, Glow */
+.modal-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: var(--brand-gold);
+  cursor: pointer;
+  transition: color 0.2s, box-shadow 0.2s;
+  z-index: 10;
+  box-shadow: none;
+  filter: drop-shadow(0 0 6px #d4af37aa);
+}
+.modal-close:hover {
+  color: var(--brand-blue);
+  box-shadow: 0 2px 8px rgba(212,175,55,0.18);
+}
+
+/* Modal Title: More luxury */
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: var(--brand-blue);
+  margin-bottom: 0.7rem;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(212,175,55,0.10), 0 1px 4px rgba(0,92,178,0.08);
+}
+
+/* Modal Gold Underline: More pronounced */
+.modal-gold-underline {
+  display: block;
+  width: 4.5rem;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #d4af37 70%, transparent);
+  border-radius: 2px;
+  margin: 0.5rem auto 0 auto;
+  opacity: 0.85;
+  box-shadow: 0 2px 8px rgba(212,175,55,0.13);
+}
+
+/* Carousel image fade animation (for ngIf image change) */
+.carousel-image.ng-animating {
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(.4,2,.3,1);
+}
+
+/* Modal content background pattern for extra luxury */
+.modal-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 2.2rem;
+  pointer-events: none;
+  background: repeating-linear-gradient(135deg, rgba(212,175,55,0.04) 0 18px, transparent 18px 36px);
+}
+.modal-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-equip-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--brand-green-dark);
+  margin-bottom: 0.7rem;
+  margin-top: 0.2rem;
+  letter-spacing: 0.5px;
+}
+.carousel-equip-desc {
+  color: #495057;
+  font-size: 1.13rem;
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 0.2rem;
+  font-weight: 400;
+}
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+.carousel-indicators span {
+  width: 13px;
+  height: 13px;
+  margin: 0 2px;
+  border-radius: 50%;
+  background: #e6e6e6;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  display: block;
+}
+.carousel-indicators span.active {
+  background: var(--brand-gold);
+  box-shadow: 0 2px 8px rgba(212,175,55,0.18);
+  transform: scale(1.25);
+}

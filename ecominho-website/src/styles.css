@@ -219,3 +219,160 @@ main {
 .lux-shadow {
   box-shadow: 0 12px 36px 0 rgba(0, 92, 178, 0.13), 0 2px 8px rgba(212,175,55,0.08);
 }
+
+/* --- Service Card & Grid Styles (Global) --- */
+.service-card {
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 92, 178, 0.08), 0 1.5px 6px rgba(0,0,0,0.06);
+  transition: box-shadow 0.3s, transform 0.3s;
+  border: 1.5px solid #f3e7c3;
+  background: var(--brand-white);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 480px;
+}
+.service-card::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #d4af37 50%, transparent);
+  opacity: 0.7;
+  border-radius: 1.25rem 1.25rem 0 0;
+  z-index: 2;
+}
+.service-card:hover {
+  transform: translateY(-12px) scale(1.035);
+  box-shadow: 0 16px 48px 0 rgba(0, 92, 178, 0.13), 0 3px 12px rgba(0,0,0,0.12);
+  border-color: #d4af37;
+}
+.service-badge {
+  position: absolute;
+  top: 18px;
+  left: 24px;
+  z-index: 3;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #fffbe8 60%, #d4af37 100%);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(212,175,55,0.13);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #bfa133;
+  border: 2px solid #d4af37;
+}
+.service-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.85) saturate(1.1);
+  position: relative;
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+}
+.service-card h3, .service-card p {
+  padding: 0 1.5rem;
+}
+.service-card h3 {
+  padding-top: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--brand-blue);
+  letter-spacing: -0.5px;
+}
+.service-card p {
+  color: var(--text-lead);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  font-weight: 400;
+  font-style: italic;
+  padding-bottom: 1.5rem;
+  flex-grow: 1;
+}
+.service-card .btn {
+  margin: 1.5rem 1.5rem 1.5rem 1.5rem;
+  align-self: flex-start;
+  margin-top: auto;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.areas-trabalho {
+  padding: 6rem 0;
+  background: var(--brand-white);
+}
+.areas-trabalho .services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+@media (min-width: 768px) {
+  .areas-trabalho .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.areas-trabalho .service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  min-height: 480px;
+  text-align: left;
+  background: var(--brand-white);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 8px 32px 0 rgba(0, 92, 178, 0.08), 0 1.5px 6px rgba(0,0,0,0.06);
+  transition: box-shadow 0.3s, transform 0.3s;
+  border: 1.5px solid #f3e7c3;
+  position: relative;
+}
+.areas-trabalho .service-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.85) saturate(1.1);
+  position: relative;
+}
+.areas-trabalho .service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--brand-blue);
+  letter-spacing: -0.5px;
+  padding: 1rem 1.5rem 0 1.5rem;
+}
+.areas-trabalho .service-card p {
+  color: var(--text-lead);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  font-weight: 400;
+  font-style: italic;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  flex-grow: 1;
+}
+.areas-trabalho .service-card .btn {
+  margin: 1.5rem 1.5rem 1.5rem 1.5rem;
+  align-self: flex-start;
+  margin-top: auto;
+}
