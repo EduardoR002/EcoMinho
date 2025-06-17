@@ -72,3 +72,22 @@
   font-size: 0.95rem;
   letter-spacing: 0.2px;
 }
+
+.footer-social {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.footer-social a {
+  color: #005cb2;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s, transform 0.3s;
+  font-size: 1.5rem;
+}
+
+.footer-social a:hover {
+  color: #00c943;
+  transform: translateY(-2px) scale(1.08);
+}
