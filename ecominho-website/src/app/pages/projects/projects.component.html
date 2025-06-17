@@ -1,0 +1,22 @@
+<div class="animated-component">
+  <section class="page-header">
+    <div class="container">
+      <h1>Projetos de Excelência</h1>
+      <p>O nosso portfólio é o reflexo do nosso compromisso com a qualidade, inovação e a satisfação total dos nossos clientes.</p>
+    </div>
+  </section>
+
+  <section class="gallery-section">
+    <div class="container">
+      <div class="projects-gallery">
+        <div *ngFor="let project of projects" class="gallery-card">
+          <img [src]="project.image" [alt]="project.title">
+          <div class="gallery-card-overlay">
+            <span class="category-badge">{{ project.category }}</span>
+            <h3>{{ project.title }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

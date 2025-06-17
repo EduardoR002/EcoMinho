@@ -1,0 +1,25 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <div class="container header-container">
+    <a routerLink="/home" class="logo" (click)="closeMenu()">
+      <img src="https://lirp.cdn-website.com/013819ed/dms3rep/multi/opt/1.1.2-af6e25fb-259w.png" alt="Ecominho Logo" style="height:48px; vertical-align:middle;">
+    </a>
+    <nav class="desktop-nav">
+      <a routerLink="/solutions" routerLinkActive="active">Soluções</a>
+      <a routerLink="/projects" routerLinkActive="active">Projetos</a>
+      <a routerLink="/about" routerLinkActive="active">Sobre Nós</a>
+      <a routerLink="/contact" class="btn btn-primary">Pedir Orçamento</a>
+    </nav>
+    <div class="mobile-menu-button">
+      <button (click)="toggleMenu()">
+        <svg *ngIf="!isMenuOpen" class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        <svg *ngIf="isMenuOpen" class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+  </div>
+  <nav *ngIf="isMenuOpen" class="mobile-nav">
+    <a routerLink="/solutions" routerLinkActive="active" (click)="closeMenu()">Soluções</a>
+    <a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">Projetos</a>
+    <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">Sobre Nós</a>
+    <a routerLink="/contact" class="btn btn-primary" (click)="closeMenu()">Pedir Orçamento</a>
+  </nav>
+</header>

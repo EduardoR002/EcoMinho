@@ -1,0 +1,101 @@
+.page-header {
+  background-color: var(--brand-blue);
+  color: white;
+  padding: 6rem 0 3rem 0;
+  text-align: center;
+}
+
+@media(min-width: 768px) {
+  .page-header {
+    padding: 8rem 0 4rem 0;
+  }
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.page-header p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 1rem;
+  font-weight: 300;
+}
+
+.gallery-section {
+  padding: 5rem 0;
+}
+
+.projects-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .projects-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gallery-card {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05);
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 450px;
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 92, 178, 0.1);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 92, 178, 0.9), transparent);
+  padding: 2rem 1.5rem;
+  color: white;
+}
+
+.gallery-card-overlay h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 0.75rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.category-badge {
+  font-size: 0.75rem;
+  background-color: var(--brand-green);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
