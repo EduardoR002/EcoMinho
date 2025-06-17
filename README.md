@@ -1,7 +1,7 @@
 # EcoMinho
 Website for an Air Conditioning Company
 
-![Ecominho Website Hero](https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=1200&auto=format&fit=crop)
+![Ecominho Website Hero]([https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=1200&auto=format&fit=crop](https://lirp.cdn-website.com/013819ed/dms3rep/multi/opt/1.1.2-af6e25fb-259w.png))
 
 This repository contains the source code for the official website of **Ecominho**, a leading company in climatization and renewable energy solutions based in Vila Verde, Portugal. The website is built with Angular and features a modern, sophisticated, and user-friendly design to showcase the company's services and portfolio.
 
