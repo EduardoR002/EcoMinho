@@ -28,7 +28,7 @@ export class SolutionsComponent {
     { name: 'Ventilo-convetores', badge: '💨', subtitle: 'Aquecimento/Arrefecimento Central', description: '', image: 'https://irp.cdn-website.com/013819ed/dms3rep/multi/Sem+t%C3%ADtulo3.jpg' },
     { name: 'Radiadores', badge: '🌡️', subtitle: 'Aquecimento Central', description: '', image: 'https://irp.cdn-website.com/013819ed/dms3rep/multi/Imagem21.png' },
     { name: 'Ar Condicionado', badge: '❄️', subtitle: 'Aquecimento/Arrefecimento Local', description: '', image: 'https://irp.cdn-website.com/013819ed/dms3rep/multi/Imagem17.jpg' },
-    { name: 'Esquentador', badge: '💧', subtitle: 'Água Quente Sanitária', description: '', image: 'https://irp.cdn-website.com/013819ed/dms3rep/multi/Imagem23.jpg' },
+    { name: 'Esquentador', badge: '💧', subtitle: 'Água Quente Sanitária', description: '', image: 'https://cdn.e-konomista.pt/uploads/2018/09/esquentador-ou-cilindro-.jpg' },
 ];
   title = 'SOLUÇÕES DE CLIMATIZAÇÃO / A.Q.S.';
 }

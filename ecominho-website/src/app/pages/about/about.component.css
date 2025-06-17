@@ -211,6 +211,14 @@
   font-style: italic;
   letter-spacing: 0.01em;
 }
+@media (min-width: 768px) {
+  .about-hero-title {
+    font-size: 4.2rem;
+  }
+  .about-hero-content {
+    padding: 6rem 2rem 6rem 2rem;
+  }
+}
 
 /* Team grid and card (rectangular, like reference) */
 .team-grid-rect {
