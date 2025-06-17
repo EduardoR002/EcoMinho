@@ -245,7 +245,7 @@
 
 /* Featured Projects Section */
 .featured-projects {
-  padding: 6rem 0;
+  padding: 3rem 0 6rem 0;
   background-color: var(--brand-light-bg);
 }
 
@@ -308,7 +308,7 @@
 }
 
 .areas-trabalho {
-  padding: 6rem 0;
+  padding: 6rem 0 3rem 0;
   background: var(--brand-white);
 }
 

@@ -78,3 +78,108 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+
+/* Solutions Hero Section (matches home hero) */
+.solutions-hero-section {
+  position: relative;
+  min-height: 44vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  margin-top: 0;
+  margin-bottom: 0;
+  box-shadow: 0 8px 32px 0 rgba(0, 92, 178, 0.10), 0 1.5px 6px rgba(0,0,0,0.08);
+}
+.solutions-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(0,92,178,0.45) 0%, rgba(0,201,67,0.25) 100%);
+  z-index: 1;
+}
+.solutions-hero-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85) blur(0.5px);
+}
+.solutions-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 5rem 2rem 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeInHero 1.2s cubic-bezier(.4,2,.3,1);
+}
+.solutions-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  letter-spacing: 2px;
+  text-shadow: 0 6px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10);
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0;
+  color: #fff;
+}
+.solutions-hero-subtitle {
+  font-size: 1.25rem;
+  max-width: 45rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.2rem;
+  font-weight: 400;
+  color: #f8f9fa;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+.hero-gold-divider {
+  display: block;
+  margin: 0.5rem auto 1.5rem auto;
+  width: 4rem;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #d4af37 50%, transparent);
+  border-radius: 2px;
+  opacity: 0.7;
+}
+@media (min-width: 768px) {
+  .solutions-hero-title {
+    font-size: 4.2rem;
+  }
+  .solutions-hero-content {
+    padding: 6rem 2rem 6rem 2rem;
+  }
+}
+
+.areas-trabalho {
+  padding: 6rem 0;
+  background: url('https://lirp.cdn-website.com/013819ed/dms3rep/multi/opt/areia-1920w.jpg') center center/cover no-repeat;
+  position: relative;
+}
+.areas-trabalho::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.82);
+  z-index: 0;
+}
+.areas-trabalho > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.equip-desc {
+  color: #6c757d;
+  font-size: 0.98rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.7rem;
+  line-height: 1.6;
+  font-style: normal;
+}
