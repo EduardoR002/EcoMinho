@@ -246,7 +246,19 @@
 /* Featured Projects Section */
 .featured-projects {
   padding: 6rem 0;
-  background-color: var(--brand-light-bg);
+  background: url('https://lirp.cdn-website.com/013819ed/dms3rep/multi/opt/areiapreta-1920w.jpg') center center/cover no-repeat;
+  position: relative;
+}
+.featured-projects::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.40);
+  z-index: 0;
+}
+.featured-projects > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .projects-grid {
@@ -309,7 +321,19 @@
 
 .areas-trabalho {
   padding: 6rem 0;
-  background: var(--brand-white);
+  background: url('https://lirp.cdn-website.com/013819ed/dms3rep/multi/opt/areia-1920w.jpg') center center/cover no-repeat;
+  position: relative;
+}
+.areas-trabalho::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.65);
+  z-index: 0;
+}
+.areas-trabalho > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .areas-trabalho .services-grid {
