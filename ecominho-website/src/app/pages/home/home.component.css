@@ -44,8 +44,10 @@
   font-size: 3.2rem;
   font-weight: 700;
   margin-bottom: 0.7rem;
-  letter-spacing: -1.5px;
+  letter-spacing: 2.5px;
   text-shadow: 0 6px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10);
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0;
 }
 
 .hero-gold-divider {
