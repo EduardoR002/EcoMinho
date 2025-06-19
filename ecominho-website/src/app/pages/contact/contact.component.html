@@ -1,58 +1,120 @@
-<div class="animated-component">
-  <section class="page-header">
-    <div class="container">
-      <h1>Entre em Contacto</h1>
-      <p>Estamos aqui para o ajudar a encontrar a solução perfeita. Fale connosco.</p>
-    </div>
-  </section>
+<div class="contact-hero-section">
+  <div class="contact-hero-overlay"></div>
+  <img src="https://lirp.cdn-website.com/013819ed/dms3rep/multi/opt/fora+peb-1920w.jpg" alt="Contacto Ecominho" class="contact-hero-bg-image">
+  <div class="contact-hero-content">
+    <h1 class="contact-hero-title">Entre em Contacto</h1>
+    <span class="hero-gold-divider"></span>
+    <div class="contact-hero-subtitle">Estamos aqui para o ajudar a encontrar a solução perfeita. Fale connosco.</div>
+  </div>
+</div>
 
-  <section class="contact-section">
-    <div class="container">
-      <div class="contact-card">
-        <div class="contact-form">
-          <h2>Envie-nos uma Mensagem</h2>
-          <form>
-            <div class="form-grid">
-              <input type="text" placeholder="O seu nome">
-              <input type="email" placeholder="O seu email">
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-card">
+      <div class="contact-form">
+        <h2>Envie-nos uma Mensagem</h2>
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group form-group-nome">
+            <label for="name">Nome</label>
+            <input id="name" type="text" placeholder="O seu nome" required>
+          </div>
+
+          <div class="form-group form-group-email">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="O seu email" required>
+          </div>
+        
+          <div class="form-group form-group-telefone phone-group">
+            <label>Telefone</label>
+            <div class="phone-inputs">
+              <select id="phoneCountryCode" [(ngModel)]="phoneCountryCode" name="phoneCountryCode" class="country-code-select">
+                <option *ngFor="let country of countries" [value]="country.dial_code">
+                  {{ getCountryFlag(country.code) }}
+                </option>
+              </select>
+              <input type="tel" id="phoneNumber" [(ngModel)]="phoneNumber" name="phoneNumber" placeholder="O seu número" required class="phone-number-input">
             </div>
-            <input type="text" placeholder="Assunto">
-            <textarea placeholder="A sua mensagem..." rows="6"></textarea>
+          </div>
+
+          <div class="form-group form-group-is-client">
+            <label for="isClient">Já é nosso cliente?</label>
+            <select id="isClient" [(ngModel)]="isClient" name="isClient" required>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option *ngFor="let option of clientOptions" [value]="option.value">
+                {{ option.label }}
+              </option>
+            </select>
+          </div>
+          
+          <div class="form-group form-group-contact-type">
+            <label for="contactType">Tipo de Contacto</label>
+            <select id="contactType" [(ngModel)]="contactType" name="contactType" required>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option *ngFor="let option of contactTypeOptions" [value]="option.value">
+                {{ option.label }}
+              </option>
+            </select>
+          </div>
+        
+          <div class="form-group form-group-assunto">
+            <label for="assunto">Assunto</label>
+            <input id="assunto" type="text" placeholder="Assunto" required>
+          </div>
+
+          <div class="form-group form-group-mensagem">
+            <label for="mensagem">A sua mensagem</label>
+            <textarea id="mensagem" placeholder="A sua mensagem..." rows="5" required></textarea>
+          </div>
+
+          <div class="form-group form-group-anexar file-upload-group">
+            <label for="file-upload" class="file-upload-label">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.25 13.25a.75.75 0 001.5 0V4.636l2.955 3.129a.75.75 0 001.09-1.03l-4.25-4.5a.75.75 0 00-1.09 0l-4.25 4.5a.75.75 0 101.09 1.03L9.25 4.636v8.614z"></path>
+                <path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z"></path>
+              </svg>
+              <span>Anexar Ficheiro</span>
+            </label>
+            <input id="file-upload" type="file" (change)="onFileSelected($event)">
+            <span class="file-name">{{ fileName }}</span>
+          </div>
+        
+          <div class="form-group form-group-enviar">
             <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-          </form>
+          </div>
+        </form>
+      </div>
+      
+      <div class="contact-info">
+        <h2>Informações</h2>
+        <div class="info-group">
+          <h3>Morada</h3>
+          <p>R. José Coimbra 23, 4730-095<br>Cabanelas, Vila Verde, Braga</p>
         </div>
-        <div class="contact-info">
-          <h2>Informações</h2>
-          <div class="info-group">
-            <h3>Morada</h3>
-            <p>R. José Coimbra 23, 4730-095<br>Cabanelas, Vila Verde, Braga</p>
-          </div>
-          <div class="info-group">
-            <h3>Email</h3>
-            <a href="mailto:geral@ecominho.pt">geral"&#64;"ecominho.pt</a>
-          </div>
-          <div class="info-group">
-            <h3>Telefone</h3>
-            <a href="tel:+351253925150">+351 253 925 150</a>
-          </div>
-          <div class="info-group">
-            <h3>Horário</h3>
-            <p>Segunda a Sexta<br>08:30 – 12:00 | 14:00 – 18:30</p>
-          </div>
+        <div class="info-group">
+          <h3>Email</h3>
+          <a href="mailto:geral@ecominho.pt">geral&#64;ecominho.pt</a>
+        </div>
+        <div class="info-group">
+          <h3>Telefone</h3>
+          <a href="tel:+351253925150">+351 253 925 150</a>
+        </div>
+        <div class="info-group">
+          <h3>Horário</h3>
+          <p>Segunda a Sexta<br>08:30 – 12:00 | 14:00 – 18:30</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="map-section">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3004.148566270617!2d-8.49070968458197!3d41.61118997924408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd245a4944b36097%3A0xe78190772e09647!2sEcominho!5e0!3m2!1spt-PT!2spt!4v1623853158917!5m2!1spt-PT!2spt" 
-      width="100%" 
-      height="100%" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </section>
-</div>
+<section class="map-section">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3004.148566270617!2d-8.49070968458197!3d41.61118997924408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd245a4944b36097%3A0xe78190772e09647!2sEcominho!5e0!3m2!1spt-PT!2spt!4v1623853158917!5m2!1spt-PT!2spt" 
+    width="100%" 
+    height="100%" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</section>
