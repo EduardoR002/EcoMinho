@@ -1,4 +1,3 @@
-
   /* Contact Hero Section (matches other pages) */
   .contact-hero-section {
     position: relative;
@@ -177,7 +176,7 @@ form {
 
 /* Anexar e Enviar lado a lado */
 .form-group-anexar { grid-column: 1 / 2; }
-.form-group-enviar { 
+.form-group-enviar {
   grid-column: 2 / 3;
   display: flex;
   align-items: flex-end; /* Alinha botão na parte inferior */
@@ -197,22 +196,105 @@ form {
     letter-spacing: 0.05em;
   }
 
-  /* Phone Group Layout */
+  /* Custom Select Dropdown */
   .phone-inputs {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
   }
 
-  .country-code-select {
-    flex: 0 0 auto;
-    width: 90px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+  .custom-select-wrapper {
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .custom-select-trigger {
+    display: flex;
+    align-items: center;
+    padding: 0.9rem 1.1rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+    border: 1px solid #ced4da;
     border-right: none;
-    font-size: 1.25rem;
-    text-align: center;
-    padding-left: 0.75rem;
-    padding-right: 0.25rem;
     font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    background: #fff;
+    cursor: pointer;
+    box-sizing: border-box;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .custom-select-trigger .flag {
+    width: 20px;
+    height: 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 0.75rem;
+    min-width: 0; /* Prevents overflow issues */
+  }
+
+  .custom-select-trigger .code {
+    flex-grow: 1;
+    text-overflow: ellipsis;
+  }
+
+  .custom-select-trigger .arrow {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #6b7280;
+    margin-left: 0.5rem;
+  }
+
+  .custom-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ced4da;
+    border-top: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+    z-index: 100;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+  }
+
+  .custom-options.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .custom-option {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .custom-option:hover {
+    background-color: #f1f1f1;
+  }
+
+  .custom-option .flag {
+    width: 20px;
+    height: 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 0.75rem;
+  }
+
+  .custom-option .code {
+    flex-grow: 1;
   }
 
   .phone-number-input {
@@ -222,7 +304,6 @@ form {
     min-width: 0; /* Prevents overflow issues */
   }
 
-
   input, select, textarea {
     width: 100%;
     padding: 0.9rem 1.1rem;
@@ -230,9 +311,11 @@ form {
     border: 1px solid #ced4da;
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
+    line-height: 1.5;
     background: #fff;
     transition: all 0.2s ease-in-out;
     box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    box-sizing: border-box;
   }
 
   input:focus, select:focus, textarea:focus {

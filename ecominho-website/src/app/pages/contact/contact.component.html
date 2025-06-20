@@ -27,11 +27,19 @@
           <div class="form-group form-group-telefone phone-group">
             <label>Telefone</label>
             <div class="phone-inputs">
-              <select id="phoneCountryCode" [(ngModel)]="phoneCountryCode" name="phoneCountryCode" class="country-code-select">
-                <option *ngFor="let country of countries" [value]="country.dial_code">
-                  {{ getCountryFlag(country.code) }}
-                </option>
-              </select>
+              <div class="custom-select-wrapper">
+                <div class="custom-select-trigger" (click)="toggleDropdown()">
+                  <div class="flag" [style.background-image]="getCountryFlagUrl(selectedCountry?.code)"></div>
+                  <div class="code">{{ selectedCountry?.dial_code }}</div>
+                  <div class="arrow"></div>
+                </div>
+                <div class="custom-options" [class.open]="isDropdownOpen">
+                  <div class="custom-option" *ngFor="let country of countries" (click)="selectCountry(country)">
+                    <div class="flag" [style.background-image]="getCountryFlagUrl(country.code)"></div>
+                    <div class="code">{{ country.dial_code }}</div>
+                  </div>
+                </div>
+              </div>
               <input type="tel" id="phoneNumber" [(ngModel)]="phoneNumber" name="phoneNumber" placeholder="O seu número" required class="phone-number-input">
             </div>
           </div>

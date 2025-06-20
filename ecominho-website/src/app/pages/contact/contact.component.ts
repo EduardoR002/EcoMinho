@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -15,6 +15,7 @@ export class ContactComponent {
   phoneCountryCode: string = '+351';
   phoneNumber: string = '';
   fileName: string = '';
+  isDropdownOpen: boolean = false;
   
   clientOptions = [
     { value: 'sim', label: 'Sim' },
@@ -272,12 +273,33 @@ export class ContactComponent {
     { "name": "Zimbabwe", "dial_code": "+263", "code": "ZW" }
   ];
 
-  getCountryFlag(countryCode: string) {
-    if (!countryCode) {
-      return '';
+  constructor(private el: ElementRef) {}
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: Event) {
+    if (!this.el.nativeElement.querySelector('.phone-inputs')?.contains(event.target)) {
+      this.isDropdownOpen = false;
     }
-    // Using Regional Indicator Symbols to create flags
-    return String.fromCodePoint(...[...countryCode.toUpperCase()].map(char => char.charCodeAt(0) + 127397));
+  }
+
+  get selectedCountry(): { name: string, dial_code: string, code: string } | undefined {
+    return this.countries.find(c => c.dial_code === this.phoneCountryCode);
+  }
+
+  getCountryFlagUrl(countryCode: string | undefined): string {
+    if (!countryCode) {
+      return 'none';
+    }
+    return `url('https://flagcdn.com/w20/${countryCode.toLowerCase()}.png')`;
+  }
+
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  selectCountry(country: any) {
+    this.phoneCountryCode = country.dial_code;
+    this.isDropdownOpen = false;
   }
 
   onFileSelected(event: Event): void {
